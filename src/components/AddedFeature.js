@@ -11,4 +11,11 @@ const AddedFeature = props => {
   );
 };
 
-export default connect()(AddedFeature);
+// const mapStateToProps = state =>{
+//   console.log('MSTP State:', state );
+//   return{
+//     featureOnProps: state.features 
+//   }
+// }
+
+export default connect(mapStateToProps)(AddedFeature);
