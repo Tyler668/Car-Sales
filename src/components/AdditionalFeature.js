@@ -3,13 +3,27 @@ import { connect } from 'react-redux';
 import {addFeature} from '../actions'
 
 const AdditionalFeature = props => {
+
+  // const addFeature = e =>{
+  //   console.log(e.target.value);
+  //   props.featuresOnProps
+  // }
+
   return (
     <li>
       {/* Add an onClick that will let you add a feature to your car */}
       <button className="button">Add</button>
-      {props.feature.name} (+{props.feature.price})
+      {props.storeProps.name} (+{props.storeProps.price})
     </li>
   );
 };
 
-export default connect()(AdditionalFeature);
+
+const mapStateToProps = state =>{
+  console.log('MSTP State:', state.car.features );
+  return{
+    storeProps: state.store
+  }
+}
+
+export default connect(mapStateToProps, {addFeature}) (AdditionalFeature);

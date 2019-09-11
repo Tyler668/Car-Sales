@@ -14,7 +14,7 @@ const AddedFeature = props => {
 // const mapStateToProps = state =>{
 //   console.log('MSTP State:', state );
 //   return{
-//     featureOnProps: state.features 
+//     propsName: state.car.props 
 //   }
 // }
 
