@@ -20,4 +20,4 @@ const AddedFeatures = props => {
   );
 };
 
-export default AddedFeatures;
+export default coonnect()(AddedFeatures);

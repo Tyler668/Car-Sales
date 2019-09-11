@@ -9,4 +9,4 @@ const Total = props => {
   );
 };
 
-export default Total;
+export default connect()(Total);

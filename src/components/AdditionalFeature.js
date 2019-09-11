@@ -11,4 +11,4 @@ const AdditionalFeature = props => {
   );
 };
 
-export default AdditionalFeature;
+export default connect()(AdditionalFeature);
