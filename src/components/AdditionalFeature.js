@@ -13,17 +13,11 @@ const AdditionalFeature = props => {
     <li>
       {/* Add an onClick that will let you add a feature to your car */}
       <button className="button">Add</button>
-      {props.storeProps.name} (+{props.storeProps.price})
+      {props.feature.name} (+{props.feature.price})
     </li>
   );
 };
 
 
-const mapStateToProps = state =>{
-  console.log('MSTP State:', state.car.features );
-  return{
-    storeProps: state.store
-  }
-}
 
-export default connect(mapStateToProps, {addFeature}) (AdditionalFeature);
+export default (AdditionalFeature);
