@@ -10,7 +10,6 @@ const Total = props => {
 };
 
 const mapStateToProps = state =>{
-  console.log('MSTP State:', state );
   return{
     propsPrice: state.car.price,
     addPrice: state.additionalPrice

@@ -21,7 +21,6 @@ const AdditionalFeatures = props => {
 
 
 const mapStateToProps = state =>{
-  console.log('MSTP State:', state );
   return{
     propsStore: state.store
   }

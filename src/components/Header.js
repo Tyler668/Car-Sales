@@ -14,7 +14,6 @@ const Header = props => {
 };
 
 const mapStateToProps = state =>{
-  console.log('MSTP State CAR:', state.car );
   return{
     propsCar: state.car   
   }

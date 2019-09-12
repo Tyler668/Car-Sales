@@ -1,3 +1,5 @@
+import { ADD_FEATURE, addFeature } from '../actions/index';
+
 export const initialState = {
     additionalPrice: 0,
     car: {
@@ -17,8 +19,18 @@ export const initialState = {
 
 
 export const featureReducer = (state = initialState, action) => {
-    switch (action.payload) {
+    console.log('action:', action)
+    switch (action.type) {
+        case ADD_FEATURE:
+            console.log('Adding feature: ', action.payload);
+            console.log('State:', state.car);
+            return {
+                ...state,
+               car: { ...state.car,
+                    features: state.car.features.concat(action.payload)
+                }
 
+            }
 
 
         default: return state;
