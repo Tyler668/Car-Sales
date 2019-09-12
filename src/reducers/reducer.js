@@ -1,4 +1,4 @@
-import { ADD_FEATURE, addFeature } from '../actions/index';
+import { ADD_FEATURE, REMOVE_FEATURE } from '../actions/index';
 
 export const initialState = {
     additionalPrice: 0,
@@ -23,14 +23,35 @@ export const featureReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_FEATURE:
             console.log('Adding feature: ', action.payload);
-            console.log('State:', state.car);
+            console.log('State:', state);
             return {
                 ...state,
+                additionalPrice:state.additionalPrice + action.payload.price,
                car: { ...state.car,
                     features: state.car.features.concat(action.payload)
                 }
+                // ,
+                // store: state.store.splice((action.payload.id -1 ) , 1)
 
             }
+
+            case REMOVE_FEATURE:
+            return{
+                ...state,
+                additionalPrice:state.additionalPrice - action.payload.price,
+                car:{ ...state.car,
+                    features: state.car.features.filter( item =>
+                   item.id !== action.payload.id
+                )}, 
+
+
+
+
+
+
+        }
+
+        
 
 
         default: return state;
